@@ -1,4 +1,8 @@
-# neuipgw_linux
+NEU-IPGW(Linux)
+=
+
+[![GitHub release](https://img.shields.io/github/release/2645Corp/neuipgw_linux.svg?maxAge=2592000)](https://github.com/2645Corp/neuipgw_linux/releases)
+[![2645 Studio](https://img.shields.io/badge/Powered%20by-2645%20Studio-yellowgreen.svg)](http://www.cool2645.com/)
 
 <p>This program is designed to pass the neu ip gateway easily.</p>
 
