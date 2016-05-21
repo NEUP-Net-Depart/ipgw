@@ -12,6 +12,17 @@ echo "请输入校园网账号："
 read username
 echo "请输入校园网密码："
 read password
+echo "请再次输入校园网密码："
+read repassword
+
+while (($password != $repassword))
+do
+echo "两次输入的密码不一致，请重试！"
+echo "请输入校园网密码："
+read password
+echo "请再次输入校园网密码："
+read repassword
+done
 
 mkdir /usr/local/neuipgw
 cp ./ipgw.sh /usr/local/neuipgw/ipgw.sh
