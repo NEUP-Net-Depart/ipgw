@@ -1,8 +1,8 @@
 #########################################################################
 # File Name: install.sh
-# Author: ##########
+# Author: Li Jiahao
 # ###############
-# mail: #################
+# mail: lijiahao@cool2645.com
 # Created Time: Sat 21 May 2016 02:18:25 PM CST
 #########################################################################
 #!/bin/bash
@@ -19,4 +19,4 @@ echo Exec=sh /usr/local/neuipgw/ipgw.sh>>/usr/share/applications/neuipgw.desktop
 echo Icon=/usr/local/neuipgw/ipgw.png>>/usr/share/applications/neuipgw.desktop
 echo Terminal=true>>/usr/share/applications/neuipgw.desktop
 echo Type=Application>>/usr/share/applications/neuipgw.desktop
-echo Categories=Application>>/usr/share/applications/neuipgw.desktop
+echo Categories=Network;>>/usr/share/applications/neuipgw.desktop
