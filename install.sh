@@ -27,17 +27,20 @@ done
 stty echo
 
 mkdir /usr/local/neuipgw
-cp ./ipgw.sh /usr/local/neuipgw/ipgw.sh
+cp ./ipgw.sh /usr/local/neuipgw/ipgw
+chmod 755 /usr/local/neuipgw/ipgw
 #cp ./user.cfg /usr/local/neuipgw/user.cfg
 echo "#!/bin/bash" > /usr/local/neuipgw/user.cfg
 echo "USER_NAME=$username" >> /usr/local/neuipgw/user.cfg
 echo "USER_PASS=$password" >> /usr/local/neuipgw/user.cfg
 cp ./ipgw.png /usr/local/neuipgw/ipgw.png
+rm -f /usr/bin/ipgw
+ln -s /usr/local/neuipgw/ipgw /usr/bin/ipgw
 
 echo [Desktop Entry]>/usr/share/applications/neuipgw.desktop
 echo Name=NEU-IPGW>>/usr/share/applications/neuipgw.desktop
 echo Comment=Speedier Internet Access>>/usr/share/applications/neuipgw.desktop
-echo Exec=sh /usr/local/neuipgw/ipgw.sh>>/usr/share/applications/neuipgw.desktop
+echo Exec=/usr/bin/ipgw>>/usr/share/applications/neuipgw.desktop
 echo Icon=/usr/local/neuipgw/ipgw.png>>/usr/share/applications/neuipgw.desktop
 echo Terminal=true>>/usr/share/applications/neuipgw.desktop
 echo Type=Application>>/usr/share/applications/neuipgw.desktop
