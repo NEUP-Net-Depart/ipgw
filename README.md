@@ -16,14 +16,12 @@ open terminal and run
 
 `$ sudo sh ./install.sh`
 
-By running the installer, you may start from the "Application Menu". <br>
+After running the installer, you may either start from the "Application Menu", or run by command `ipgw`. <br>
+Use `ipgw --help` to get more information of usage. <br>
 The program will be installed to /usr/local/neuipgw/ <br>
 You may change the configuration of the installed program by editing /usr/local/neuipgw/user.cfg
 
 
 <h5>If you prefer not to install it,</h5>
 
-fill in the user.cfg with your campus network account.
-
-Just sh the ipgw.sh, it will work okay.
-
+Just sh the ipgw.sh, it will also work okay. The configuration will be sourced from the file user.cfg under the same directory of the program.
