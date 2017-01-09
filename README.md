@@ -4,13 +4,13 @@ NEU-IPGW(Linux)
 [![GitHub release](https://img.shields.io/github/release/2645Corp/neuipgw_linux.svg?maxAge=2592000)](https://github.com/2645Corp/neuipgw_linux/releases)
 [![2645 Studio](https://img.shields.io/badge/Powered%20by-2645%20Studio-yellowgreen.svg)](http://www.cool2645.com/)
 
-<p>This program is designed to pass the neu ip gateway easily.</p>
+This program is designed to pass the neu ip gateway easily.
 
-<p>Find [Wiki] if you need.</p>
+Find [[Wiki]](https://github.com/2645Corp/neu-ipgw_linux/wiki) if you need.
 
-<h3>Quick Start</h3>
+### Quick Start
 
-<h5>To install it to your computer,</h5>
+**To install it to your computer,**
 
 open terminal and run
 
@@ -18,10 +18,9 @@ open terminal and run
 
 After running the installer, you may either start from the "Application Menu", or run by command `ipgw`. <br>
 Use `ipgw --help` to get more information of usage. <br>
-The program will be installed to /usr/local/neuipgw/ <br>
-You may change the configuration of the installed program by editing /usr/local/neuipgw/user.cfg
+The program will be installed to `/usr/local/neuipgw/` <br>
+You may change the configuration of the installed program by editing `/usr/local/neuipgw/user.cfg`
 
+**If you prefer not to install it,**
 
-<h5>If you prefer not to install it,</h5>
-
-Just sh the ipgw.sh, it will also work okay. The configuration will be sourced from the file user.cfg under the same directory of the program.
+Just sh the ipgw.sh, it will also work okay. The configuration will be sourced from the file `user.cfg` under the same directory as the program.
