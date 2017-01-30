@@ -119,7 +119,11 @@ while [ -h "$SOURCE"  ]; do # resolve $SOURCE until the file is no longer a syml
 done
 DIR="$( cd -P "$( dirname "$SOURCE"  )" && pwd  )"
 
-source $DIR/user.cfg
+if [ -f "$DIR/user.cfg" ]; then
+    source $DIR/user.cfg
+else
+    source /etc/neuipgw/user.cfg
+fi
 
 temp=$(getopt -q -o qcdfmu:p:h --long connect,disconnect,force,mobile,query,username:,password:,help -- "$@")
 if [ $? != 0 ]
