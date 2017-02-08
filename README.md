@@ -14,15 +14,17 @@ Find [[Wiki]](https://github.com/2645Corp/neu-ipgw_linux/wiki) if you need.
 
 open terminal and run
 
-`$ sudo sh ./install.sh`
+`$ sh ./install.sh`
+
+The program will require sudo password.
 
 After running the installer, you may either start from the "Application Menu", or run by command `ipgw`. <br>
 Use `ipgw --help` to get more information of usage. <br>
 
-**For version v2.2 and later**
+**For version v2.3 and later**
 
 The program will be installed to `/opt/2645/neuipgw/` <br>
-You may change the configuration of the installed program by editing `/etc/neuipgw/user.cfg`
+You may change the configuration of the installed program by editing `~/.neuipgw/user.cfg`
 
 **For version v2.1 and before**
 
