@@ -1,3 +1,4 @@
+#!/bin/bash
 #########################################################################
 # File Name: install.sh
 # Author: Li Jiahao
@@ -5,7 +6,6 @@
 # mail: lijiahao@cool2645.com
 # Created Time: Sat 21 May 2016 02:18:25 PM CST
 #########################################################################
-#!/bin/bash
 
 echo "Would you like a Chinese installation prompt?(y/N)"
 read zh_enable

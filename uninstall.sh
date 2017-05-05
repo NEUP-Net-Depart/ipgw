@@ -1,3 +1,4 @@
+#!/bin/bash
 #########################################################################
 # File Name: uninstall.sh
 # Author: Li Jiahao
@@ -5,7 +6,6 @@
 # mail: lijiahao@cool2645.com
 # Created Time: Wed 08 Feb 2017 11:49:25 AM CST
 #########################################################################
-#!/bin/bash
 
 echo "感谢使用NEU IPGW登陆器 2645工作室出品"
 
