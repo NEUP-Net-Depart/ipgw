@@ -106,9 +106,9 @@ sudo sh -c " echo Type=Application>>$desktop_path"
 sudo sh -c " echo Categories=Network>>$desktop_path"
 
 if [[ $zh_enable == 'y' ]] || [[ $zh_enable == 'Y' ]]; then
-    echo "安装成功！"
+    echo "安装成功！现在你可以通过运行命令 ipgw 来连接上网了！"
 else
-    echo "Complete!"
+    echo "Yay! You may now connect to the Internet by command ipgw."
 fi
 
 

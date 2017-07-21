@@ -9,10 +9,10 @@
 
 usage()  
 {  
-  echo "Usage: `basename $0` [-c | -d] [-q] [-f] [-m] [-u <username>] [-p <password>]"
+  echo "Usage: `basename $0` [-c|-d] [-q] [-f] [-m] [-u <username>] [-p <password>]"
   echo "Options:"
-  echo -e "-c, --connect\tConnect Neu ip gateway"
-  echo -e "-d, --disconnect\tDisconnect Neu ip gateway"
+  echo -e "-c, --connect\tConnect NEU IP Gateway"
+  echo -e "-d, --disconnect\tDisconnect NEU IP Gateway"
   echo -e "-f, --force\tPerform force connection"
   echo -e "-m, --mobile\tConnect as mobile device"
   echo -e "-q, --query\tQuery use of flow, balance, etc"
