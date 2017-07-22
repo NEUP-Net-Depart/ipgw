@@ -44,7 +44,15 @@ requireuinfo()
 disconnect()
 {
   requireuinfo
-  LOGOUT=`curl -s -d "action=logout&ac_id=1&user_ip=&nas_ip=&user_mac=&url=&username=$USER_NAME&password=$USER_PASS&save_me=0" "https://ipgw.neu.edu.cn/srun_portal_pc.php?ac_id=1&" 2>&1`
+  if [ ! -x "$(command -v curl)" ]; then
+	  if [ ! -x "$(command -v wget)" ]; then
+		  echo "Error: Neither curl nor wget is installed"
+	  else
+		  LOGOUT=`wget -q --post-data="action=logout&ac_id=1&user_ip=&nas_ip=&user_mac=&url=&username=$USER_NAME&password=$USER_PASS&save_me=0" "https://ipgw.neu.edu.cn/srun_portal_pc.php?ac_id=1&" -O - 2>&1`
+	  fi
+  else
+	  LOGOUT=`curl -s -d "action=logout&ac_id=1&user_ip=&nas_ip=&user_mac=&url=&username=$USER_NAME&password=$USER_PASS&save_me=0" "https://ipgw.neu.edu.cn/srun_portal_pc.php?ac_id=1&" 2>&1`
+  fi
   if [[ "$LOGOUT" =~ "网络已断开" ]];
   then
 	  echo "断开连接成功！"
@@ -57,7 +65,15 @@ disconnect()
 connectasphone()
 {
   requireuinfo
-  LOGIN=`curl -H "Content-type: application/x-www-form-urlencoded" -A "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A366 Safari/600.1.4" -s -d "action=login&ac_id=1&user_ip=&nas_ip=&user_mac=&url=&username=$USER_NAME&password=$USER_PASS&save_me=0" "https://ipgw.neu.edu.cn/srun_portal_pc.php?ac_id=1&" 2>&1`
+  if [ ! -x "$(command -v curl)" ]; then
+	  if [ ! -x "$(command -v wget)" ]; then
+		  echo "Error: Neither curl nor wget is installed"
+	  else
+		  LOGIN=`wget --header="Content-type: application/x-www-form-urlencoded" --header="User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 8_0_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A366 Safari/600.1.4" -q --post-data="action=login&ac_id=1&user_ip=&nas_ip=&user_mac=&url=&username=$USER_NAME&password=$USER_PASS&save_me=0" "https://ipgw.neu.edu.cn/srun_portal_pc.php?ac_id=1&" -O - 2>&1`
+	  fi
+  else
+      LOGIN=`curl -H "Content-type: application/x-www-form-urlencoded" -A "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12A366 Safari/600.1.4" -s -d "action=login&ac_id=1&user_ip=&nas_ip=&user_mac=&url=&username=$USER_NAME&password=$USER_PASS&save_me=0" "https://ipgw.neu.edu.cn/srun_portal_pc.php?ac_id=1&" 2>&1`
+  fi
   if [[ "$LOGIN" =~ "网络已连接" ]];
   then
 	  echo "网络连接成功！"
@@ -71,7 +87,15 @@ connectasphone()
 connect()
 {
   requireuinfo
-  LOGIN=`curl -H "Content-type: application/x-www-form-urlencoded" -A "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36" -s -d "action=login&ac_id=1&user_ip=&nas_ip=&user_mac=&url=&username=$USER_NAME&password=$USER_PASS&save_me=0" "https://ipgw.neu.edu.cn/srun_portal_pc.php?ac_id=1&" 2>&1`
+  if [ ! -x "$(command -v curl)" ]; then
+	  if [ ! -x "$(command -v wget)" ]; then
+		  echo "Error: Neither curl nor wget is installed"
+	  else
+		  LOGIN=`wget --header="Content-type: application/x-www-form-urlencoded" --header="User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36" -q --post-data="action=login&ac_id=1&user_ip=&nas_ip=&user_mac=&url=&username=$USER_NAME&password=$USER_PASS&save_me=0" "https://ipgw.neu.edu.cn/srun_portal_pc.php?ac_id=1&" -O - 2>&1`
+	  fi
+  else
+	  LOGIN=`curl -H "Content-type: application/x-www-form-urlencoded" -A "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36" -s -d "action=login&ac_id=1&user_ip=&nas_ip=&user_mac=&url=&username=$USER_NAME&password=$USER_PASS&save_me=0" "https://ipgw.neu.edu.cn/srun_portal_pc.php?ac_id=1&" 2>&1`
+  fi
   if [[ "$LOGIN" =~ "网络已连接" ]];
   then
 	  echo "网络连接成功！"
@@ -84,7 +108,15 @@ connect()
 }
 query()
 {
-	INFO=`curl -s -d "action=get_online_info&key=$k" "https://ipgw.neu.edu.cn/include/auth_action.php?k=$k" 2>&1`
+	if [ ! -x "$(command -v curl)" ]; then
+		if [ ! -x "$(command -v wget)" ]; then
+			echo "Error: Neither curl nor wget is installed"
+		else
+			INFO=`wget -q --post-data="action=get_online_info&key=$k" "https://ipgw.neu.edu.cn/include/auth_action.php?k=$k" -O - 2>&1`
+		fi
+	else
+		INFO=`curl -s -d "action=get_online_info&key=$k" "https://ipgw.neu.edu.cn/include/auth_action.php?k=$k" 2>&1`
+	fi
 	#echo $k;
 	#echo $INFO;
 	DATA=${INFO%%,*}
@@ -203,5 +235,5 @@ fi
 #echo $LOGOUT
 #echo $LOGIN
 
-sleep 3s
+sleep 2s
 

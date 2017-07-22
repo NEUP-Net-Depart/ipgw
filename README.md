@@ -1,6 +1,7 @@
 NEU-IPGW(Linux)
 =
 
+[![GitHub stars](https://img.shields.io/github/stars/2645Corp/neu-ipgw_linux.svg)](https://github.com/2645Corp/neu-ipgw_linux/stargazers)
 [![GitHub release](https://img.shields.io/github/release/2645Corp/neuipgw_linux.svg?maxAge=2592000)](https://github.com/2645Corp/neuipgw_linux/releases)
 [![2645 Studio](https://img.shields.io/badge/Powered%20by-2645%20Studio-yellowgreen.svg)](http://www.cool2645.com/)
 
@@ -26,4 +27,4 @@ You may change the configuration of the installed program by editing `~/.neuipgw
 
 **If you prefer not to install it,**
 
-Just sh the ipgw.sh, it will also work okay. The configuration will be sourced from the file `user.cfg` under the same directory as the program.
+Just run the ipgw.sh, it will also work okay. The configuration will be sourced from the file `user.cfg` under the same directory as the program.
