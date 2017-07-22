@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NEU-IPGW</title>
+
+    <link rel="stylesheet" href="assets/blood.css">
+    <link rel="stylesheet" href="assets/zenburn.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/bootstrap.min.js"></script>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+        <div class="col col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 content-1">
+            <h1 style="font-size: 2.4em !important;">
+                NEU IPGW for Linux!
+            </h1>
+            Help pass <strong>NEU IP-Gateway</strong> for Linux even if you have no desktop environment.
+            <ul>
+                <li id="curl-tab" class="active"><a class="install-a" href="#!">Via curl</a></li>
+                <li id="wget-tab" ><a href="#!">Via wget</a></li>
+            </ul>
+            <pre style="margin-top: 0;"><code class="hljs smalltalk">
+<span class="hljs-string">$ </span>sh -c <span id="cmd"
+                    class="hljs-comment">"$(curl ipgw.tk)"</span>
+
+</code></pre>
+            Made by NEU Pioneer | Geeks of NEU
+        </div>
+        <div class="col col-xs-12 content-2">
+            <iframe src="https://ghbtns.com/github-btn.html?user=2645Corp&repo=neu-ipgw_linux&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+            <iframe src="https://ghbtns.com/github-btn.html?user=2645Corp&repo=neu-ipgw_linux&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
+        </div>
+    </div>
+    <div class="backgrounds">
+        <div data-background-hash="#3498dbnullnullnullnullnullnullnullnull"
+             data-loaded="true" style=" display: block;"></div>
+    </div>
+</div>
+
+<script>
+    $("#curl-tab").click(function () {
+        $("#curl-tab").addClass("active");
+        $("#wget-tab").removeClass("active");
+        $("#cmd").html('"$(curl ipgw.tk)"');
+    });
+    $("#wget-tab").click(function () {
+        $("#wget-tab").addClass("active");
+        $("#curl-tab").removeClass("active");
+        $("#cmd").html('"$(wget ipgw.tk -O -)"');
+    })
+</script>
+
+</body>
+</html>
