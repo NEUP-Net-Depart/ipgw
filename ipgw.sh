@@ -235,5 +235,4 @@ fi
 #echo $LOGOUT
 #echo $LOGIN
 
-sleep 2s
 

@@ -99,7 +99,7 @@ sudo ln -s /opt/2645/neuipgw/ipgw /usr/bin/ipgw
 sudo sh -c "echo [Desktop Entry]>$desktop_path"
 sudo sh -c " echo Name=NEU-IPGW>>$desktop_path"
 sudo sh -c "echo Comment=Speedier Internet Access>>$desktop_path"
-sudo sh -c " echo Exec=/usr/bin/ipgw>>$desktop_path"
+sudo sh -c " echo 'Exec=/usr/bin/ipgw && sleep 2s'>>$desktop_path"
 sudo sh -c " echo Icon=/opt/2645/neuipgw/ipgw.png>>$desktop_path"
 sudo sh -c " echo Terminal=true>>$desktop_path"
 sudo sh -c " echo Type=Application>>$desktop_path"
